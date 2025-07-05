@@ -1,6 +1,6 @@
 # ROS 2 Stereo Camera Processor
 
-A ROS 2 node for streaming, rectifying, and publishing images from a stereo camera pair (e.g. ESP32-CAMs over HTTP MJPEG). Uses a calibration file for stereo rectification.
+A ROS 2 node for streaming, rectifying, and publishing images from a stereo IP camera pair (e.g. ESP32-CAMs over HTTP MJPEG). Uses a calibration file for stereo rectification.
 
 ## Overview
 
