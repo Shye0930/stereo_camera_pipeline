@@ -1,0 +1,89 @@
+#--------------------------------------------------------------------------------------------
+# System config
+#--------------------------------------------------------------------------------------------
+
+# When the variables are commented, the system doesn't load a previous session or not store the current one
+
+# If the LoadFile doesn't exist, the system give a message and create a new Atlas from scratch
+#System.LoadAtlasFromFile: "Session_MH01_MH02_MH03_Stereo60_Pseudo"
+
+# The store file is created from the current session, if a file with the same name exists it is deleted
+#System.SaveAtlasToFile: "Session_MH01_MH02_MH03_Stereo60_Pseudo"
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+File.version: "1.0"
+
+# Camera calibration and distortion parameters (OpenCV)
+# Get intrinsic value from left camera
+Camera1.fx: 481.9460638543312
+Camera1.fy: 481.9460638543312
+Camera1.cx: 256.01516342163086
+Camera1.cy: 168.44792556762695
+
+Camera1.k1: 0.0
+Camera1.k2: 0.0
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+
+# Camera 2 intrinsics is only needed for Camera.type: "Pinhole"
+Camera2.fx: 481.9460638543312
+Camera2.fy: 481.9460638543312
+Camera2.cx: 256.01516342163086
+Camera2.cy: 168.44792556762695
+
+Camera2.k1: 0.0
+Camera2.k2: 0.0
+Camera2.p1: 0.0
+Camera2.p2: 0.0
+
+#--------------------------------------------------------------------------------------------
+# Stereo Rectification. Only if you need to pre-rectify the images.
+# Camera.fx, .fy, etc must be the same as in LEFT.P
+#--------------------------------------------------------------------------------------------
+LEFT.width: 480
+LEFT.height: 320
+LEFT.D: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d
+  data: [-0.08321227997423902, 0.07130359539781482, -0.0031341237797576, 0.0002927736339862293, 0.0]
+LEFT.K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [447.90316535655916, 0.0, 238.00724861477346, 0.0, 450.46640510019705, 174.1037617498794, 0.0, 0.0, 1.0]
+LEFT.R: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.9996087244918391, -0.008465185373440726, -0.02665968035051516, 0.009248196847324452, 0.9995253659978885, 0.029385601607934818, 0.02639827219481413, -0.029620657713501374, 0.9992125639030707]
+LEFT.P: !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [481.9460638543312, 0.0, 256.01516342163086, 0.0, 0.0, 481.9460638543312, 168.44792556762695, 0.0, 0.0, 0.0, 1.0, 0.0]
+
+RIGHT.width: 480
+RIGHT.height: 320
+RIGHT.D: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d
+  data: [-0.06938586374356788, 0.007777227587559047, 0.004930078746885331, 0.00019759288041435488, 0.0]
+RIGHT.K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [450.6734305985347, 0.0, 249.8601643588968, 0.0, 453.1998578063282, 161.5489489992353, 0.0, 0.0, 1.0]
+RIGHT.R: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.99991265959129, 0.0018855192926234361, -0.013081208127303921, -0.0022706810781447863, 0.9995624428898615, -0.029491808549050334, 0.013019876977685025, 0.029518935974212006, 0.9994794221105486]
+RIGHT.P: !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [481.9460638543312, 0.0, 256.01516342163086, -37.957399693607364, 0.0, 481.9460638543312, 168.44792556762695, 0.0, 0.0, 0.0, 1.0, 0.0]
