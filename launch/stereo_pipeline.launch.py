@@ -12,7 +12,7 @@ def generate_launch_description():
 
     package_prefix = get_package_prefix('stereo_camera_pipeline')
 
-    calibration_file_path =  '/home/shye/Desktop/projects/fyp/config/stereo/stereo_calibration.yaml'
+    calibration_file_path =  '/home/shye0930/Desktop/fyp/config/stereo/stereo_calibration.yaml'
 
     return LaunchDescription([
         Node(
